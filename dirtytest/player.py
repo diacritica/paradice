@@ -31,7 +31,7 @@ if __name__=="__main__":
 
     OLDGT = 0
     while True:
-        time.sleep(0.1)
+        time.sleep(0.05)
         PT = time.time() + offset # current time in seconds since EPOCH
         GT = read(gt_path) # scheduled game time
 
@@ -40,6 +40,6 @@ if __name__=="__main__":
                 r = int(read(r_path))
                 while int(GT) != int(PT - delta):
                     PT = time.time() + offset
-                    time.sleep(0.2)
+                    time.sleep(0.1)
                 print("DICE:",r)
         OLDGT = GT
